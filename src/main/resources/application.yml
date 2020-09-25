@@ -1,0 +1,24 @@
+micronaut:
+  application:
+    name: import-api-migration
+  http:
+    client:
+      read-timeout: 30s
+  data:
+    pageable:
+      max-page-size: 1000
+jackson:
+  bean-introspection-module: true
+  serialization:
+    indentOutput: true
+datasources:
+  default:
+    url: ${DB_JDBC_URL:`jdbc:h2:mem:devDb;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE`}
+    driverClassName: ${DB_DRIVER:org.h2.Driver}
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:''}
+    maximum-pool-size: 2
+    minimum-idle: 0
+    max-lifetime: 45000
+    connection-timeout: 30000
+    idle-timeout: 35000
