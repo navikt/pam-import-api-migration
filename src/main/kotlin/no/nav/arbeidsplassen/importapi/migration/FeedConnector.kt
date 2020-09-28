@@ -10,13 +10,14 @@ import org.slf4j.LoggerFactory
 import java.io.IOException
 import java.time.LocalDateTime
 import java.util.*
+import javax.inject.Inject
 import javax.inject.Singleton
 
 
 @Singleton
 class FeedConnector(val objectMapper: ObjectMapper,
-                    @Client("FeedConnector") val client: RxHttpClient,
-                    @Value("\${adminstatussync.pagesize}") val pageSize: Int = 200) {
+                    @Client("/") val client: RxHttpClient,
+                    @Value("\${feed.pagesize}") val pageSize: Int = 200) {
 
     companion object {
         private val LOG = LoggerFactory.getLogger(FeedConnector::class.java)

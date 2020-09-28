@@ -25,7 +25,7 @@ abstract class AdStateRepository(val connection: Connection): CrudRepository<AdS
                 prepareSQL(entity)
                 execute()
                 @Suppress("UNCHECKED_CAST")
-                return entity.copy(id = generatedKeys.getLong(1)) as S
+                return entity
             }
         }
         else {

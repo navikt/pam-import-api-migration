@@ -6,7 +6,7 @@ plugins {
     id "application"
 }
 
-version "0.2"
+version "0.1"
 group "no.nav.arbeidsplassen.importapi.migration"
 
 repositories {
@@ -21,8 +21,7 @@ configurations {
 }
 
 dependencies {
-    implementation("info.picocli:picocli")
-    implementation("io.micronaut.picocli:micronaut-picocli:3.0.0")
+    annotationProcessor "io.micronaut.configuration:micronaut-picocli"
     implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
     implementation "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
@@ -55,6 +54,8 @@ dependencies {
 
     implementation "org.postgresql:postgresql:$postgresqlVersion"
     implementation "org.apache.commons:commons-text:1.8"
+    implementation("info.picocli:picocli")
+    implementation("io.micronaut.configuration:micronaut-picocli")
 }
 
 test.classpath += configurations.developmentOnly

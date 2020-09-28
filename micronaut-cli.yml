@@ -1,4 +1,4 @@
-profile: service
+profile: cli
 defaultPackage: no.nav.arbeidsplassen.importapi.migration
 ---
 sourceLanguage: kotlin
