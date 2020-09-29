@@ -29,7 +29,7 @@ class Application: Runnable {
     lateinit var feedtaskRepository: FeedtaskRepository
     @Inject
     lateinit var feedConnector: FeedConnector
-    @Value("\${MIGRATION_URL") lateinit var migrationUrl: String
+    @Value("\${MIGRATION_URL}") lateinit var migrationUrl: String
 
     override fun run() {
         val providerUrl = migrationUrl + "/providers/entities"
